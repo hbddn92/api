@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 
 var style = {
 	display: 'flex',
-	margin: '30px 0'
+	margin: '30px 0',
 }
 
 class GroupButton extends Component {
@@ -14,7 +14,7 @@ class GroupButton extends Component {
           return child
         })
 		return(
-			<div style={style}>
+			<div className='groupButton' style={style}>
 				{listChild}
 			</div>
 		)

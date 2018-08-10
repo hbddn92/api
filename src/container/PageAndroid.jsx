@@ -6,24 +6,6 @@ import GroupButton from '../components/GroupButton'
 import PageBodyGetData from '../components/PageBodyGetData'
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
-import Icon from '@material-ui/core/Icon';
-
-
-const styles = theme => ({
-  button: {
-    margin: theme.spacing.unit,
-  },
-  leftIcon: {
-    marginRight: theme.spacing.unit,
-  },
-  rightIcon: {
-    marginLeft: theme.spacing.unit,
-  },
-  iconSmall: {
-    fontSize: 20,
-  },
-});
-
 
 var schema = {
 	id      : 0,
@@ -44,19 +26,22 @@ var styleBt1 = {
 	width: '150px'
 }
 
+const styles = theme => ({
+  button: {
+    margin: theme.spacing.unit,
+  },
+  input: {
+    display: 'none',
+  },
+});
 
-class PageHome extends Component {
+class PageAndroid extends Component {
 	constructor(props) {
 		super(props)
 		this.onChange = this.onChange.bind(this)
-		this.onClick = this.onClick.bind(this)
 		this.state = {
 			schema: schema
 		}
-	}
-
-	onClick() {
-		console.log('abc')
 	}
 
 	onChange() {
@@ -67,19 +52,16 @@ class PageHome extends Component {
 	}
 
 	render() {
-		const {classes} = this.props
+		// const {classes} = this.props
 		return(
 			<Page>
-				<PageTitle>Home</PageTitle>
+				<PageTitle>Android</PageTitle>
 				<PageBodyGetData>
 					<JsonEditor ref={(ref) => this.editorGet = ref} valueInit={this.state.schema} />
 					<GroupButton>
-						<Button onClick={this.onClick} color="primary" size="medium">Get Data</Button>
+						<Button color="primary" size="medium">Get Data</Button>
 						<Button variant="outlined" size="large" color="primary" >Get Data</Button>
 						<Button variant="contained" size="large" color="primary">Get Data</Button>
-						<Button variant="contained" color="secondary">
-							Send<Icon className={classes.rightIcon}>send</Icon>
-						</Button>
 					</GroupButton>
 					<JsonEditor ref={(ref) => this.editorGet = ref} />
 				</PageBodyGetData>
@@ -88,4 +70,5 @@ class PageHome extends Component {
 	}
 }
 
-export default withStyles(styles)(PageHome);
+export default PageAndroid;
+

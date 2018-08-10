@@ -20,7 +20,9 @@ class Page extends Component {
         })
 		return(
 			<article className="mainPage">
-				{listChild}
+				<div className="mainPageDiv">
+					{listChild}
+				</div>
 			</article>
 		)
 	}

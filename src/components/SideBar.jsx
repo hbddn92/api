@@ -26,7 +26,7 @@ class SideBar extends Component {
 		var listSideBar = []
 		var sideBarLeft = 'sideBarLeft';
 		var iconClose   = 'fas fa-align-justify'
-		if(this.state.close) {
+		if(this.props.openSidebar) {
 			sideBarLeft = 'sideBarLeft';
 			iconClose   = 'fas fa-align-justify'
 		} else {
@@ -47,7 +47,6 @@ class SideBar extends Component {
 
 		return (
 			<div className={sideBarLeft}>
-				{toggleSideBar}
 				<ul className='sideBarLeftParent'>
 					{listSideBar}
 				</ul>

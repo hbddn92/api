@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-class SideBarToggle extends Component {
+class ToggleSidebar extends Component {
 	constructor(props) {
 		super(props)
 	}
@@ -16,12 +16,11 @@ class SideBarToggle extends Component {
 			iconClose   = 'fas fa-times'
 		}
 		return(
-			<div className='sidebarToogle'>
-				{this.props.children}
-				<p className='openSideBar'><i onClick={this.props.onClick} className={iconClose}></i></p>
+			<div className='toogleSidebar'>
+				<span onClick={this.props.clickToogle} className='openSideBar'><i className={iconClose}></i></span>
 			</div>
 		)
 	}
 }
 
-export default SideBarToggle;
+export default ToggleSidebar;
