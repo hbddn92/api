@@ -10,7 +10,7 @@ class SideBarToggle extends Component {
 
 	render() {
 		var iconClose   = 'fas fa-align-justify'
-		if(this.props.stateClose) {
+		if(this.props.openSidebar) {
 			iconClose   = 'fas fa-align-justify'
 		} else {
 			iconClose   = 'fas fa-times'
@@ -18,7 +18,7 @@ class SideBarToggle extends Component {
 		return(
 			<div className='sidebarToogle'>
 				{this.props.children}
-				<p className='openSideBar'><i onClick={this.props.onClick} className={iconClose}></i></p>
+				<p className='openSideBar'><i onClick={this.props.clickToogleSideBar} className={iconClose}></i></p>
 			</div>
 		)
 	}

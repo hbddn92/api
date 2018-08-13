@@ -22,23 +22,20 @@ class SideBar extends Component {
 	}
 
 	render() {
-		var toggleSideBar
+		var logoSideBar
 		var listSideBar = []
 		var sideBarLeft = 'sideBarLeft';
-		var iconClose   = 'fas fa-align-justify'
 		if(this.props.openSidebar) {
 			sideBarLeft = 'sideBarLeft';
-			iconClose   = 'fas fa-align-justify'
 		} else {
 			sideBarLeft = 'sideBarLeft open'
-			iconClose   = 'fas fa-times'
 		}
 
 		if(this.props.children.length > 0) {
 			var self = this
 			this.props.children.map(function(child, index) {
 			  if(index === 0) {
-			  	toggleSideBar = React.cloneElement(child, {onClick:  self.closeSideBar, stateClose: self.state.close});
+			  	logoSideBar = child
 			  } else {
 			  	listSideBar.push(child)
 			  }
@@ -47,11 +44,12 @@ class SideBar extends Component {
 
 		return (
 			<div className={sideBarLeft}>
+				{logoSideBar}
 				<ul className='sideBarLeftParent'>
 					{listSideBar}
 				</ul>
 			</div>
-	);
+		);
 	}
 }
 export default SideBar;

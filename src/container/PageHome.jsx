@@ -7,6 +7,7 @@ import PageBodyGetData from '../components/PageBodyGetData'
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import Icon from '@material-ui/core/Icon';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 
 const styles = theme => ({
@@ -67,6 +68,7 @@ class PageHome extends Component {
 	}
 
 	render() {
+		console.log('render page home')
 		const {classes} = this.props
 		return(
 			<Page>
@@ -74,11 +76,11 @@ class PageHome extends Component {
 				<PageBodyGetData>
 					<JsonEditor ref={(ref) => this.editorGet = ref} valueInit={this.state.schema} />
 					<GroupButton>
-						<Button onClick={this.onClick} color="primary" size="medium">Get Data</Button>
+						<Button style={{'color': 'red'}} onClick={this.onClick} color="primary" size="medium">Get Data</Button>
 						<Button variant="outlined" size="large" color="primary" >Get Data</Button>
 						<Button variant="contained" size="large" color="primary">Get Data</Button>
 						<Button variant="contained" color="secondary">
-							Send<Icon className={classes.rightIcon}>send</Icon>
+							Delete<DeleteIcon className={classes.rightIcon}>Delete</DeleteIcon>
 						</Button>
 					</GroupButton>
 					<JsonEditor ref={(ref) => this.editorGet = ref} />

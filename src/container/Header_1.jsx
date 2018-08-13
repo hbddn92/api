@@ -4,33 +4,46 @@ import Header	from '../components/Header';
 import HeaderLeft	from '../components/HeaderLeft';
 import HeaderRight	from '../components/HeaderRight';
 import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import HowToRegIcon from "@material-ui/icons/HowToReg";
 import Logo			from '../components/Logo';
-import ToggleSidebar from '../components/ToggleSidebar';
+import PersonOutline from "@material-ui/icons/PersonOutline";
+import HeaderToggleSideBar from '../components/HeaderToggleSideBar';
+
+var style = {
+	button: {
+		color: 'white',
+		borderColor: 'white'
+	},
+	rightIcon: {
+		marginLeft: '5px'
+	}
+}
+
+const styles = theme => ({
+  rightIcon: {
+    marginLeft: theme.spacing.unit,
+  },
+});
 
 class Header_1 extends Component {
 	constructor(props) {
 		super(props)
-		this.clickToogle = this.clickToogle.bind(this)
-	}
-
-	clickToogle() {
-		console.log(1111)
-		this.props.clickToogle()
 	}
 
 	render() {
 		return (
 			<Header>
 				<HeaderLeft>
-					<ToggleSidebar clickToogle={this.clickToogle}/>
+					<HeaderToggleSideBar openSidebar={this.props.openSidebar} clickToogleSideBar={this.props.clickToogleSideBar}/>
 					<Logo srcLogo={logo}/>
-					<Button variant="outlined" color="primary" aria-label="Add">
-						Login
-			      	</Button>
+					<IconButton>
+			      		<PersonOutline style={style.button}/>
+			      	</IconButton>	
 				</HeaderLeft>
 				<HeaderRight>
-					<Button variant="outlined" color="primary" aria-label="Add">
-						Login
+					<Button style={style.button} variant="outlined" color="primary" aria-label="Add">
+						Login <HowToRegIcon style={style.rightIcon}></HowToRegIcon>
 			      	</Button>
 				</HeaderRight>
 			</Header>

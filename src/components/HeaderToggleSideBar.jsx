@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-class ToggleSidebar extends Component {
+class HeaderToggleSidebar extends Component {
 	constructor(props) {
 		super(props)
 	}
@@ -10,17 +10,17 @@ class ToggleSidebar extends Component {
 
 	render() {
 		var iconClose   = 'fas fa-align-justify'
-		if(this.props.stateClose) {
+		if(this.props.openSidebar) {
 			iconClose   = 'fas fa-align-justify'
 		} else {
 			iconClose   = 'fas fa-times'
 		}
 		return(
 			<div className='toogleSidebar'>
-				<span onClick={this.props.clickToogle} className='openSideBar'><i className={iconClose}></i></span>
+				<span onClick={this.props.clickToogleSideBar} className='openSideBar'><i className={iconClose}></i></span>
 			</div>
 		)
 	}
 }
 
-export default ToggleSidebar;
+export default HeaderToggleSidebar;

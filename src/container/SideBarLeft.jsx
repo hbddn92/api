@@ -10,13 +10,13 @@ class SideBarLeft extends Component {
 	render() {
 		return(
 			<SideBar openSidebar={this.props.openSidebar}>
-				<SideBarToogle>
+				<SideBarToogle clickToogleSideBar={this.props.clickToogleSideBar} openSidebar={this.props.openSidebar}>
 					<Logo srcLogo={logo}/>
 				</SideBarToogle>
+
 				<SideBarSub>
 					<SideBarTitle icon={'fas fa-atlas'} pathPage={'/'}>Home</SideBarTitle>
 				</SideBarSub>
-
 				<SideBarSub hasChild={true}>
 					<SideBarTitle icon={'fab fa-android'} hasChild={true}>Android</SideBarTitle>
 					<SideBarSub>
@@ -26,7 +26,6 @@ class SideBarLeft extends Component {
 						<SideBarTitle icon={'fab fa-android'} pathPage={'/android'}>Get Cartype</SideBarTitle>
 					</SideBarSub>
 				</SideBarSub>
-
 				<SideBarSub hasChild={true}>
 					<SideBarTitle icon={'fab fa-apple'} hasChild={true}>IOS</SideBarTitle>
 					<SideBarSub>
@@ -36,7 +35,6 @@ class SideBarLeft extends Component {
 						<SideBarTitle icon={'fab fa-apple'}>Get Cartype</SideBarTitle>
 					</SideBarSub>
 				</SideBarSub>
-				
 				<SideBarSub hasChild={true}>
 					<SideBarTitle icon={'fab fa-edge'} hasChild={true}>Web Browser</SideBarTitle>
 					<SideBarSub hasChild={true}>
@@ -58,7 +56,6 @@ class SideBarLeft extends Component {
 						</SideBarSub>
 					</SideBarSub>
 				</SideBarSub>
-
 				<SideBarSub>
 					<SideBarTitle icon={'fab fa-algolia'}>Algolia</SideBarTitle>
 				</SideBarSub>
