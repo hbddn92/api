@@ -10,10 +10,6 @@ class SideBarLeft extends Component {
 	render() {
 		return(
 			<SideBar openSidebar={this.props.openSidebar}>
-				<SideBarToogle clickToogleSideBar={this.props.clickToogleSideBar} openSidebar={this.props.openSidebar}>
-					<Logo srcLogo={logo}/>
-				</SideBarToogle>
-
 				<SideBarSub>
 					<SideBarTitle icon={'fas fa-atlas'} pathPage={'/'}>Home</SideBarTitle>
 				</SideBarSub>

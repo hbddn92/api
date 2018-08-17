@@ -22,31 +22,18 @@ class SideBar extends Component {
 	}
 
 	render() {
-		var logoSideBar
-		var listSideBar = []
 		var sideBarLeft = 'sideBarLeft';
 		if(this.props.openSidebar) {
 			sideBarLeft = 'sideBarLeft';
 		} else {
 			sideBarLeft = 'sideBarLeft open'
-		}
-
-		if(this.props.children.length > 0) {
-			var self = this
-			this.props.children.map(function(child, index) {
-			  if(index === 0) {
-			  	logoSideBar = child
-			  } else {
-			  	listSideBar.push(child)
-			  }
-			})
+			window.addEventListener( 'click', this.handlerClickWindow, false );
 		}
 
 		return (
-			<div className={sideBarLeft}>
-				{logoSideBar}
+			<div className={sideBarLeft} id="sideBar">
 				<ul className='sideBarLeftParent'>
-					{listSideBar}
+					{this.props.children}
 				</ul>
 			</div>
 		);

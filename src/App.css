@@ -27,6 +27,7 @@
   min-width: 300px;
   height: 100vh;
   position: fixed;
+  padding-top: 105px;
   top: 0px;
   left: -300px;
   z-index: 1;
@@ -58,7 +59,7 @@
   color: black;
   text-decoration: none;
   cursor: pointer;
-  padding-right: 48px;
+  position: relative;
 }
 
 .sideBarLeft .sideBarLink:hover {
@@ -71,6 +72,8 @@
 
 .sideBarLink i:nth-child(2) {
   margin-left: 5px;
+  position: absolute;
+  right: 10px;
 }
 
 .openSideBar {
@@ -206,7 +209,7 @@ header {
     background-color: #2196f3;
     color: white;
     min-height: 85px;
-    z-index: 1
+    z-index: 100
 }
 
 .logoComponents a img {
@@ -242,17 +245,10 @@ header .openSideBar {
 }
 
 @media(min-width: 1380px) {
-  .headerLeft .logoComponents {
-    display: none;
-  }
-
   .headerLeft .logoComponents h2 {
     margin: 0px;
   }
 
-  header #header{
-    margin-left: 300px;
-  }
 }
 
 
