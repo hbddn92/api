@@ -35,16 +35,16 @@ class SideBarLeft extends Component {
 					<SideBarTitle icon={'fab fa-edge'} hasChild={true}>Web Browser</SideBarTitle>
 					<SideBarSub hasChild={true}>
 						<SideBarTitle icon={'fas fa-brain'} hasChild={true}>WebBooking</SideBarTitle>
-							<SideBarSub>
+						<SideBarSub>
 							<SideBarTitle icon={'fab fa-apple'}>Get Setting</SideBarTitle>
-						</SideBarSub>	
+						</SideBarSub>
 						<SideBarSub>
 							<SideBarTitle icon={'fab fa-apple'}>Get Cartype</SideBarTitle>
 						</SideBarSub>
 					</SideBarSub>
 					<SideBarSub hasChild={true}>
 						<SideBarTitle icon={'fas fa-brain'} hasChild={true}>New CC</SideBarTitle>
-							<SideBarSub>
+						<SideBarSub>
 							<SideBarTitle icon={'fab fa-apple'}>Get Setting</SideBarTitle>
 						</SideBarSub>	
 						<SideBarSub>
