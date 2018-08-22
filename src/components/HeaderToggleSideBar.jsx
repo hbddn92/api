@@ -8,7 +8,7 @@ function HeaderToggleSidebar(props) {
 	}
 	return(
 		<div className='toogleSidebar'>
-			<span onClick={props.clickToogleSideBar} className='openSideBar'><i className={iconClose}></i></span>
+			<span onClick={props.clickToogleSideBar} className='openSideBar'><i className={iconClose} id='iconControlSidebar'></i></span>
 		</div>
 	)
 }

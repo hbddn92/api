@@ -9,7 +9,7 @@ import logo			from '../logo.png';
 class SideBarLeft extends Component {
 	render() {
 		return(
-			<SideBar openSidebar={this.props.openSidebar}>
+			<SideBar {...this.props}>
 				<SideBarSub>
 					<SideBarTitle icon={'fas fa-atlas'} pathPage={'/'}>Home</SideBarTitle>
 				</SideBarSub>
