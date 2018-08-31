@@ -32,6 +32,7 @@ class App extends Component {
 					<Route exact path="/" component={PageHome} />
 					<Route path="/android" component={PageAndroid}/>
 					<Route path="/schemaForm" component={PageSchemaForm}/>
+					<Route path="/schemaForm-2" component={PageSchemaForm}/>
 				</div>
 			</Router>
 		);

@@ -1,5 +1,6 @@
 import React, {Component} 	from 'react'
 import Page 				from '../components/Page';
+import PageTitle 				from '../components/PageTitle';
 import GroupButton 			from '../components/GroupButton';
 import Form 				from "react-jsonschema-form";
 import Button from '@material-ui/core/Button';
@@ -95,11 +96,14 @@ class SchemaForm extends Component {
   	};
 
 	render() {
+		console.log('render page SchemaForm')
+		console.log(this.props)
 		return(
 			<Page>
-				<div class="schemaForm">
+				<PageTitle>Schema Form</PageTitle>
+				<div className="schemaForm">
 					<Form schema={schema} onChange={this.log("changed")} onSubmit={this.progress} onError={this.log("errors")}>
-						<div class='btSchemaForm'>
+						<div className='btSchemaForm'>
 							<Button variant="contained" size="large" color="primary" type="submit">Submit</Button>
 							<Button variant="outlined" size="large" color="primary" >Reset</Button>
 						</div>

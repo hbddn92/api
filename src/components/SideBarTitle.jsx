@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
+import { NavLink } from "react-router-dom";
+
 
 function SideBarTitle(props) {
 	if(!props.hasChild) {
+		var pathPage = props.pathPage || '/404'
 		return(
-			<a className='sideBarLink' href={props.pathPage}><i className={props.icon}></i>{props.children}</a>
+			<NavLink className="sideBarLink" to={pathPage} activeClassName="selected" exact={true}>
+				<i className={props.icon}></i>
+				{props.children}
+			</NavLink>
+
 		)
 	} else {
 		return(
