@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import Header_1			from './container/Header_1';
+import Header			from './container/Header';
 import SideBarLeft		from './container/SideBarLeft';
 import PageHome			from './container/PageHome';
 import PageAndroid	  	from './container/PageAndroid';
-import PageAndroid1	  	from './container/PageAndroid-1.jsx';
 import PageSchemaForm	from './container/PageSchemaForm';
+import AppStore 		from './AppStore';
+import { Provider } 	from 'react-redux';
 
-import Button from '@material-ui/core/Button';
 import './App.css';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
 	constructor(props) {
@@ -25,16 +25,18 @@ class App extends Component {
 
 	render() {
 		return (
-			<Router>
-				<div className="App">
-					<Header_1 openSidebar={this.state.openSidebar} clickToogleSideBar={this.clickToogleSideBar} />
-					<SideBarLeft openSidebar={this.state.openSidebar} clickToogleSideBar={this.clickToogleSideBar}/>
-					<Route exact path="/" component={PageHome} />
-					<Route path="/android" component={PageAndroid}/>
-					<Route path="/schemaForm" component={PageSchemaForm}/>
-					<Route path="/schemaForm-2" component={PageSchemaForm}/>
-				</div>
-			</Router>
+			<Provider store={AppStore}>
+				<Router>
+					<div className="App">
+						<Header openSidebar={this.state.openSidebar} clickToogleSideBar={this.clickToogleSideBar} />
+						<SideBarLeft openSidebar={this.state.openSidebar} clickToogleSideBar={this.clickToogleSideBar}/>
+						<Route exact path="/" component={PageHome} />
+						<Route path="/android" component={PageAndroid}/>
+						<Route path="/schemaForm" component={PageSchemaForm}/>
+						<Route path="/schemaForm-2" component={PageSchemaForm}/>
+					</div>
+				</Router>
+			</Provider>
 		);
 	}
 }

@@ -5,8 +5,7 @@ import JsonEditor from '../components/JsonEditor';
 import GroupButton from '../components/GroupButton'
 import PageBodyGetData from '../components/PageBodyGetData'
 import Button from '@material-ui/core/Button';
-import { withStyles } from '@material-ui/core/styles';
-import {Router, Route, Link} from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
 import PageSchemaForm	from './PageSchemaForm';
 
 var schema = {
@@ -22,20 +21,6 @@ var schema = {
 		}
 	}
 };
-
-var styleBt1 = {
-	color: 'red',
-	width: '150px'
-}
-
-const styles = theme => ({
-  button: {
-    margin: theme.spacing.unit,
-  },
-  input: {
-    display: 'none',
-  },
-});
 
 class PageAndroid extends Component {
 	constructor(props) {
@@ -87,12 +72,6 @@ function About(props) {
 		</Page>
 	)
 }
-
-const Topic = ({ match }) => (
-  <div>
-    <h3>{match.params.topicId}</h3>
-  </div>
-);
 
 export default PageAndroid;
 

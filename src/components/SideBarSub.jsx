@@ -23,7 +23,7 @@ class SideBarSub extends Component {
 
 		if(this.props.hasChild && this.props.children.length > 0) {
 			var self = this
-			this.props.children.map(function(child, index) {
+			this.props.children.forEach(function(child, index) {
 			  if(index === 0) {
 			  	barTitle = React.cloneElement(child, {onClick:  self.openSubSideBar, stateClose: self.state.close})
 			  } else {
