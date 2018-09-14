@@ -12,7 +12,7 @@ class SideBar extends Component {
 	}
 
 	handleClickOutside(event) {
-		if (this.wrapperRef && !this.wrapperRef.contains(event.target) && event.target.id != 'iconControlSidebar') {
+		if (this.wrapperRef && !this.wrapperRef.contains(event.target) && event.target.id !== 'iconControlSidebar') {
 			this.props.clickToogleSideBar();
 		}
 	}

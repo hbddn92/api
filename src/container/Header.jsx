@@ -20,17 +20,7 @@ var style = {
 	}
 }
 
-const styles = theme => ({
-  rightIcon: {
-    marginLeft: theme.spacing.unit,
-  },
-});
-
-class Header_1 extends Component {
-	constructor(props) {
-		super(props)
-	}
-
+class HeaderMain extends Component {
 	render() {
 		return (
 			<Header>
@@ -51,4 +41,4 @@ class Header_1 extends Component {
 	}
 }
 
-export default Header_1;
+export default HeaderMain;

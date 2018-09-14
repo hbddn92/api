@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import SideBarTitle 	from '../components/SideBarTitle';
 import SideBarSub 	from '../components/SideBarSub';
 import SideBar			from '../components/SideBar';
-import Logo			from '../components/Logo';
-import logo			from '../logo.png';
 
 class SideBarLeft extends Component {
 	render() {

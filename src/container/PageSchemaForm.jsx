@@ -1,7 +1,6 @@
 import React, {Component} 	from 'react'
 import Page 				from '../components/Page';
 import PageTitle 			from '../components/PageTitle';
-import GroupButton 			from '../components/GroupButton';
 import Form 				from "react-jsonschema-form";
 import Button 				from '@material-ui/core/Button';
 import LinearProgress 		from '@material-ui/core/LinearProgress';
