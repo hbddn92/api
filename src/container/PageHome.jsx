@@ -7,6 +7,8 @@ import PageBodyGetData from '../components/PageBodyGetData'
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import DeleteIcon from '@material-ui/icons/Delete';
+import { connect } from 'react-redux'
+import { compose } from 'redux'
 
 
 const styles = theme => ({
@@ -50,6 +52,7 @@ class PageHome extends Component {
 	}
 
 	onClick() {
+		this.props.dispatch({type: 'TEST_BUTTON', data: 'send to components'})
 	}
 
 	onChange() {
@@ -60,16 +63,16 @@ class PageHome extends Component {
 	}
 
 	render() {
-		console.log('render page home')
+		// console.log('render page home')
 		const {classes} = this.props
 		return(
 			<Page>
-				<PageTitle>Home</PageTitle>
+				<PageTitle>{this.props.hello}</PageTitle>
 				<PageBodyGetData>
 					<JsonEditor ref={(ref) => this.editorGet = ref} valueInit={this.state.schema} />
 					<GroupButton>
-						<Button style={{'color': 'red'}} onClick={this.onClick} color="primary" size="medium">Get Data</Button>
-						<Button variant="outlined" size="large" color="primary" >Get Data</Button>
+						<Button style={{'color': 'red'}} color="primary" size="medium">Get Data</Button>
+						<Button variant="outlined" onClick={this.onClick} size="large" color="primary" >Test Socket.io</Button>
 						<Button variant="contained" size="large" color="primary">Get Data</Button>
 						<Button variant="contained" color="secondary">
 							Delete<DeleteIcon className={classes.rightIcon}>Delete</DeleteIcon>
@@ -82,4 +85,14 @@ class PageHome extends Component {
 	}
 }
 
-export default withStyles(styles)(PageHome);
+const mapStateToProps = state => ({
+  hello: state.hello
+})
+
+export default compose(
+	withStyles(styles),
+	connect(mapStateToProps)
+	)(PageHome)
+
+// export default withStyles(styles)(PageHome);
+

@@ -12,14 +12,12 @@ class JsonEditors extends Component {
 	}
 
 	onChange(data) {
-		console.log(data)
 		if(!data.error) {
 			this.setState({value: data.json})
 		}
 	}
 
 	render() {
-		console.log(this.props.valueInit)
 		return(
 			<JSONInput
 		        id          = 'a_unique_id'
