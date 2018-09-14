@@ -32,11 +32,11 @@
   left: -300px;
   z-index: 1;
   background-color: white;
-  webkit-transition: all 0.7s ease;
-  -moz-transition: all 0.7s ease;
-  -o-transition: all 0.7s ease;
-  -ms-transition: all 0.7s ease;
-  transition: all 0.7s ease;
+  webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .sideBarLeft.open {
@@ -62,6 +62,10 @@
   position: relative;
 }
 
+.sideBarLink.selected {
+  background-color: rgba(0,0,0,.05)
+}
+
 .sideBarLeft .sideBarLink:hover {
   background-color: rgba(0,0,0,.05);
 }
@@ -79,8 +83,9 @@
 .openSideBar {
   text-align: right;
   margin: 0px;
-  padding: 30px 15px 30px 0;
-  cursor: pointer
+  cursor: pointer;
+  display: inline-block;
+  min-width: 22px;
 }
 
 .openSideBar i {
@@ -252,6 +257,40 @@ header .openSideBar {
 }
 
 
+/***********schemaForm*********/
+
+.btSchemaForm {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.schemaForm {
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+
+.progressContainer {
+  margin: 30px 0;
+  display: flex;
+  align-items: center;
+}
+
+.progressContainer .progressLine {
+  flex-grow: 1
+}
+
+.progressContainer .progressCancel {
+  margin-left: 30px;
+}
+
+.jsonOutput {
+    margin: 30px 0;
+}
 
 
 
+
+
+ 

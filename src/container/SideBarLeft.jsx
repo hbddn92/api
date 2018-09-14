@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import SideBarTitle 	from '../components/SideBarTitle';
 import SideBarSub 	from '../components/SideBarSub';
-import SideBarToogle from '../components/SideBarToogle';
 import SideBar			from '../components/SideBar';
 import Logo			from '../components/Logo';
 import logo			from '../logo.png';
@@ -13,13 +12,16 @@ class SideBarLeft extends Component {
 				<SideBarSub>
 					<SideBarTitle icon={'fas fa-atlas'} pathPage={'/'}>Home</SideBarTitle>
 				</SideBarSub>
+				<SideBarSub>
+					<SideBarTitle icon={'fas fa-atlas'} pathPage={'/schemaForm'}>JsonSchemaForm</SideBarTitle>
+				</SideBarSub>
 				<SideBarSub hasChild={true}>
 					<SideBarTitle icon={'fab fa-android'} hasChild={true}>Android</SideBarTitle>
 					<SideBarSub>
 						<SideBarTitle icon={'fab fa-android'} pathPage={'/android'}>Get Setting</SideBarTitle>
 					</SideBarSub>
 					<SideBarSub>
-						<SideBarTitle icon={'fab fa-android'} pathPage={'/android'}>Get Cartype</SideBarTitle>
+						<SideBarTitle icon={'fab fa-android'} pathPage={'/android1/2'}>Get Cartype</SideBarTitle>
 					</SideBarSub>
 				</SideBarSub>
 				<SideBarSub hasChild={true}>

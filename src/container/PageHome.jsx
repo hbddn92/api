@@ -57,7 +57,6 @@ class PageHome extends Component {
 	}
 
 	onClick() {
-		console.log('abc')
 	}
 
 	onChange() {

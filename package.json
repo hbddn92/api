@@ -12,6 +12,8 @@
     "react-json-edit": "^0.3.1",
     "react-json-editor": "^0.3.0",
     "react-json-editor-ajrm": "^2.5.0",
+    "react-json-view": "^1.19.1",
+    "react-jsonschema-form": "^1.0.4",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4"
   },
@@ -19,6 +21,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postbuild": "rm -rf ../devebot-web/public && mv -T build/ ../devebot-web/public"
   }
 }
