@@ -1,11 +1,11 @@
 import React, {Component} 	from 'react'
 import Page 				from '../components/Page';
-import PageTitle 				from '../components/PageTitle';
+import PageTitle 			from '../components/PageTitle';
 import GroupButton 			from '../components/GroupButton';
 import Form 				from "react-jsonschema-form";
-import Button from '@material-ui/core/Button';
-import LinearProgress from '@material-ui/core/LinearProgress';
-import ReactJson from 'react-json-view'
+import Button 				from '@material-ui/core/Button';
+import LinearProgress 		from '@material-ui/core/LinearProgress';
+import ReactJson 			from 'react-json-view'
 
 const schema = {
   "definitions": {
@@ -29,10 +29,6 @@ const schema = {
 		  "title": "A string value",
 		  "type": "string",
 		  "default": "lorem ipsum"
-		},
-		{
-		  "title": "a boolean value",
-		  "type": "boolean"
 		}
 	  ],
 	  "additionalItems": {
@@ -80,11 +76,9 @@ class SchemaForm extends Component {
 	}
 
 	progress = (formData) => {
-		console.log(JSON.stringify(formData.formData))
 		this.setState({jsonData: formData.formData})
 		let self = this
 		setInterval(function(){
-			console.log('set set')
 			const completed = self.state.completed;
 			if (completed === 100) {
 			  self.setState({ completed: 0 });
@@ -96,8 +90,6 @@ class SchemaForm extends Component {
   	};
 
 	render() {
-		console.log('render page SchemaForm')
-		console.log(this.props)
 		return(
 			<Page>
 				<PageTitle>Schema Form</PageTitle>
