@@ -52,7 +52,7 @@ class PageHome extends Component {
 	}
 
 	onClick() {
-		this.props.dispatch({type: 'TEST_BUTTON', data: 'send to components'})
+		this.props.testButton()
 	}
 
 	onChange() {
@@ -63,7 +63,7 @@ class PageHome extends Component {
 	}
 
 	render() {
-		// console.log('render page home')
+		console.log(this.props)
 		const {classes} = this.props
 		return(
 			<Page>
@@ -89,9 +89,15 @@ const mapStateToProps = state => ({
   hello: state.hello
 })
 
+const mapDispatchToProps = dispatch => {
+  return({
+		testButton: () => dispatch({type: "HELLO_SAGA_ASYNC", data: "send to components"})
+	})
+}
+
 export default compose(
 	withStyles(styles),
-	connect(mapStateToProps)
+	connect(mapStateToProps, mapDispatchToProps)
 	)(PageHome)
 
 // export default withStyles(styles)(PageHome);
