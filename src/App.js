@@ -4,6 +4,8 @@ import SideBarLeft		from './container/SideBarLeft';
 import PageHome			from './container/PageHome';
 import PageAndroid	  	from './container/PageAndroid';
 import PageSchemaForm	from './container/PageSchemaForm';
+import Login	from './container/Login';
+import PrivateRoute	from './container/PrivateRoute';
 import AppStore 		from './AppStore';
 import { Provider } 	from 'react-redux';
 
@@ -28,12 +30,14 @@ class App extends Component {
 			<Provider store={AppStore}>
 				<Router>
 					<div className="App">
-						<Header openSidebar={this.state.openSidebar} clickToogleSideBar={this.clickToogleSideBar} />
-						<SideBarLeft openSidebar={this.state.openSidebar} clickToogleSideBar={this.clickToogleSideBar}/>
-						<Route exact path="/" component={PageHome} />
+						{/* <Header openSidebar={this.state.openSidebar} clickToogleSideBar={this.clickToogleSideBar} />
+						<SideBarLeft openSidebar={this.state.openSidebar} clickToogleSideBar={this.clickToogleSideBar}/> */}
+						<PrivateRoute path="/" component={PageHome} />
+						<Route path="/login" component={Login}/>
+						{/* <Route path="/home" component={PageHome} />
 						<Route path="/android" component={PageAndroid}/>
 						<Route path="/schemaForm" component={PageSchemaForm}/>
-						<Route path="/schemaForm-2" component={PageSchemaForm}/>
+						<Route path="/schemaForm-2" component={PageSchemaForm}/> */}
 					</div>
 				</Router>
 			</Provider>
